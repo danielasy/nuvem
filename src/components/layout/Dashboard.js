@@ -2,14 +2,16 @@ import AppBar from '@material-ui/core/AppBar';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import { withStyles } from '@material-ui/core/styles';
+import MenuIcon from '@material-ui/icons/Menu';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const drawerWidth = 240;
+import Sidebar from './Sidebar';
+
+const drawerWidth = 280;
 
 const styles = (theme) => ({
   dashboardFrame: {
@@ -21,7 +23,6 @@ const styles = (theme) => ({
     zIndex: 1,
   },
   appBar: {
-    backgroundColor: '#FFFFFF',
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -86,7 +87,7 @@ class Dashboard extends React.Component {
   };
 
   render() {
-    const { classes, content, sidebar } = this.props;
+    const { classes, content, pathname } = this.props;
     const { open } = this.state;
 
     return (
@@ -99,10 +100,10 @@ class Dashboard extends React.Component {
           elevation={1}
           position="absolute"
         >
-          <Toolbar disableGutters={!open}>
+          <Toolbar disableGutters={true}>
             <IconButton
               color="inherit"
-              aria-label="Abrir menu"
+              aria-label="Abrir ou fechar menu"
               onClick={this.handleDrawerToggle}
               className={classNames(classes.menuButton)}
             >
@@ -123,7 +124,10 @@ class Dashboard extends React.Component {
               keepMounted: true, // Better open performance on mobile
             }}
           >
-            {sidebar}
+            <Sidebar
+              pathname={pathname}
+              onNavigationClick={this.handleDrawerClose}
+            />
           </Drawer>
         </Hidden>
         <Hidden smDown={true}>
@@ -134,7 +138,7 @@ class Dashboard extends React.Component {
               paper: classes.drawerPaper,
             }}
           >
-            {sidebar}
+            <Sidebar pathname={pathname} />
           </Drawer>
         </Hidden>
         <main
@@ -152,7 +156,7 @@ class Dashboard extends React.Component {
 Dashboard.propTypes = {
   classes: PropTypes.object.isRequired,
   content: PropTypes.node,
-  sidebar: PropTypes.node,
+  pathname: PropTypes.string.isRequired,
   theme: PropTypes.object.isRequired,
 };
 
