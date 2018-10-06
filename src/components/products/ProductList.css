@@ -1,0 +1,62 @@
+.product-list {
+  width: 100%;
+}
+
+/* Head */
+.product-list thead {
+  background-color: #FFFFFF;
+}
+
+.product-list thead th {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 32px 8px 12px;
+  text-align: left;
+}
+
+/* Body */
+.product-list tbody tr {
+  border-top: 2px solid #EFEFEF;
+}
+
+.product-list tbody tr:nth-child(odd) {
+  background-color: #F9F9F9;
+}
+
+.product-list tbody tr:nth-child(even) {
+  background-color: #FFFFFF;
+}
+
+.product-list tbody td {
+  font-size: 0.875rem;
+  padding: 24px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+/* Special fields */
+.product-list .product-list__product-name {
+  padding-top: 36px;
+}
+
+.product-list__product-image img {
+  width: 64px;
+}
+
+.product-list__action-link {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* Links */
+.product-list a {
+  color: #65BDCB;
+  text-decoration: none;
+}
+
+.product-list a:hover,
+.product-list a:active {
+  color: #333333;
+  text-decoration: underline;
+}

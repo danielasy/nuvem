@@ -4,8 +4,29 @@ import { Route, Switch } from 'react-router-dom';
 
 import Dashboard from '../components/layout/Dashboard';
 import NuvemTheme from '../components/layout/NuvemTheme';
+import ProductsPage from './ProductsPage';
 
 class DashboardPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      products: [
+        {
+          id: 1,
+          name: 'Vestido',
+          price: 12999,
+          stock: 10,
+        },
+        {
+          id: 2,
+          name: 'Camisa',
+          price: 8099,
+          stock: 5,
+        }
+      ],
+    };
+  }
+
   render() {
     return (
       <NuvemTheme>
@@ -16,7 +37,7 @@ class DashboardPage extends React.Component {
               <Route
                 path="/products"
                 exact={true}
-                render={() => <p>list</p>}
+                render={() => <ProductsPage products={this.state.products} />}
               />
               <Route
                 path="/products/new"
