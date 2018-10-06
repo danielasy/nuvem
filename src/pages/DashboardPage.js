@@ -42,9 +42,18 @@ class DashboardPage extends React.Component {
               <Route
                 path="/products/new"
                 exact={true}
-                render={() => <p>new</p>}
               />
             </Switch>
+          }
+          title={
+            <>
+              <h1>Meus produtos</h1>
+              <Route
+                path="/products/new"
+                exact={true}
+                render={() => <h2>&nbsp;/ Adicionar um produto</h2>}
+              />
+            </>
           }
         />
       </NuvemTheme>

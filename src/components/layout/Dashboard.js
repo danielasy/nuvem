@@ -87,7 +87,7 @@ class Dashboard extends React.Component {
   };
 
   render() {
-    const { classes, content, pathname } = this.props;
+    const { classes, content, pathname, title } = this.props;
     const { open } = this.state;
 
     return (
@@ -109,7 +109,7 @@ class Dashboard extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            Meus produtos
+            {title}
           </Toolbar>
         </AppBar>
         <Hidden mdUp={true}>
@@ -158,6 +158,7 @@ Dashboard.propTypes = {
   content: PropTypes.node,
   pathname: PropTypes.string.isRequired,
   theme: PropTypes.object.isRequired,
+  title: PropTypes.node,
 };
 
 export default withStyles(styles, { withTheme: true })(Dashboard);
