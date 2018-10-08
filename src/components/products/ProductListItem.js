@@ -21,11 +21,19 @@ class ProductListItem extends React.Component {
         <td className="product-list__product-image">
           <img src={item.imageUrl || placeholder} alt={item.name} />
         </td>
-        <td className="product-list__product-name"><Link to="">{item.name}</Link></td>
-        <td><ListTextInput value={item.stock} /></td>
-        <td><ListTextInput value={printBRL(item.price)} /></td>
-        <td><ListTextInput value={item.pricePromo ? printBRL(item.pricePromo) : '*'} /></td>
-        <td></td>
+        <td className="product-list__product-name">
+          <Link to="">{item.name}</Link>
+        </td>
+        <td className="product-list__field--md">
+          <ListTextInput value={item.stock} />
+        </td>
+        <td className="product-list__field--sm">
+          <ListTextInput value={printBRL(item.price)} />
+        </td>
+        <td className="product-list__field--lg">
+          <ListTextInput value={item.pricePromo ? printBRL(item.pricePromo) : '*'} />
+        </td>
+        <td className="product-list__field--lg"></td>
         <td>
           <Link to="" className="product-list__action-link">
             <EditIcon style={{ width: 16, height: 16, marginRight: 8 }} />

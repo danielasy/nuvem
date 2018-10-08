@@ -60,3 +60,28 @@
   color: #333333;
   text-decoration: underline;
 }
+
+/* Responsive table */
+.product-list__field--sm,
+.product-list__field--md,
+.product-list__field--lg {
+  display: none;
+}
+
+@media only screen and (min-width: 600px) {
+  .product-list__field--sm {
+    display: table-cell;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .product-list__field--md {
+    display: table-cell;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .product-list__field--lg {
+    display: table-cell;
+  }
+}

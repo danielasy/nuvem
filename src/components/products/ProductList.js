@@ -21,10 +21,10 @@ class ProductList extends React.Component {
             </th>
             <th>Imagem</th>
             <th>Produto</th>
-            <th>Estoque</th>
-            <th>Preço Original</th>
-            <th>Preço Promocional</th>
-            <th>Variações</th>
+            <th className="product-list__field--md">Estoque</th>
+            <th className="product-list__field--sm">Preço Original</th>
+            <th className="product-list__field--lg">Preço Promocional</th>
+            <th className="product-list__field--lg">Variações</th>
             <th>Ações</th>
           </tr>
         </thead>
