@@ -1,0 +1,16 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 32px 0 16px;
+}
+
+.pagination li {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.pagination li:last-child {
+  margin-right: 0;
+}

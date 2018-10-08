@@ -23,7 +23,19 @@ class DashboardPage extends React.Component {
           name: 'Camisa',
           price: 8099,
           stock: 5,
-        }
+        },
+        {
+          id: 3,
+          name: 'Sandália',
+          price: 15999,
+          stock: 1,
+        },
+        {
+          id: 4,
+          name: 'Mochila',
+          price: 19999,
+          stock: 0,
+        },
       ],
     };
   }
@@ -38,7 +50,7 @@ class DashboardPage extends React.Component {
               <Route
                 path="/products"
                 exact={true}
-                render={() => <ProductsPage products={this.state.products} />}
+                render={(routeProps) => <ProductsPage {...routeProps} products={this.state.products} />}
               />
               <Route
                 path="/products/new"

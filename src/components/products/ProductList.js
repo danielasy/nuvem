@@ -12,6 +12,9 @@ class ProductList extends React.Component {
       return <p>Não há produtos para visualizar.</p>
     }
 
+    const start = (this.props.page - 1) * this.props.pageSize;
+    const end = start + this.props.pageSize;
+
     return (
       <table className="product-list">
         <thead>
@@ -30,12 +33,14 @@ class ProductList extends React.Component {
         </thead>
         <tbody>
           {
-            this.props.items.map((item) => (
-              <ProductListItem
-                key={item.id}
-                item={item}
-              />
-            ))
+            this.props.items
+              .slice(start, end)
+              .map((item) => (
+                <ProductListItem
+                  key={item.id}
+                  item={item}
+                />
+              ))
           }
         </tbody>
       </table>
@@ -52,6 +57,8 @@ ProductList.propTypes = {
     pricePromo: PropTypes.number,
     stock: PropTypes.number.isRequired,
   })).isRequired,
+  page: PropTypes.number.isRequired,
+  pageSize: PropTypes.number.isRequired,
 };
 
 export default ProductList;
