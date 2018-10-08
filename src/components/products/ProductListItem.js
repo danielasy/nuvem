@@ -27,18 +27,21 @@ class ProductListItem extends React.Component {
         <td className="product-list__field--md">
           <ListTextInput
             className="product-list__input"
+            readOnly={true}
             value={item.stock}
           />
         </td>
         <td className="product-list__field--sm">
           <ListTextInput
             className="product-list__input"
+            readOnly={true}
             value={printBRL(item.price)}
           />
         </td>
         <td className="product-list__field--lg">
           <ListTextInput
             className="product-list__input"
+            readOnly={true}
             value={item.pricePromo ? printBRL(item.pricePromo) : '*'}
           />
         </td>
