@@ -25,13 +25,22 @@ class ProductListItem extends React.Component {
           <Link to="">{item.name}</Link>
         </td>
         <td className="product-list__field--md">
-          <ListTextInput value={item.stock} />
+          <ListTextInput
+            className="product-list__input"
+            value={item.stock}
+          />
         </td>
         <td className="product-list__field--sm">
-          <ListTextInput value={printBRL(item.price)} />
+          <ListTextInput
+            className="product-list__input"
+            value={printBRL(item.price)}
+          />
         </td>
         <td className="product-list__field--lg">
-          <ListTextInput value={item.pricePromo ? printBRL(item.pricePromo) : '*'} />
+          <ListTextInput
+            className="product-list__input"
+            value={item.pricePromo ? printBRL(item.pricePromo) : '*'}
+          />
         </td>
         <td className="product-list__field--lg"></td>
         <td>

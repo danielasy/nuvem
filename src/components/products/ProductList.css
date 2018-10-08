@@ -43,6 +43,10 @@
   width: 64px;
 }
 
+.product-list__input {
+  width: 110px;
+}
+
 .product-list__action-link {
   display: flex;
   align-items: center;
