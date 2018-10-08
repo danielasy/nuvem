@@ -48,14 +48,11 @@ class DashboardPage extends React.Component {
             </Switch>
           }
           title={
-            <>
-              <h1>Meus produtos</h1>
-              <Route
-                path="/products/new"
-                exact={true}
-                render={() => <h2>&nbsp;/ Adicionar um produto</h2>}
-              />
-            </>
+            <Route
+              path="/products/new"
+              exact={true}
+              children={({ match }) => match ? 'Meus produtos / Adicionar um produto' : 'Meus produtos'}
+            />
           }
         />
       </NuvemTheme>

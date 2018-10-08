@@ -23,6 +23,7 @@ const styles = (theme) => ({
     zIndex: 1,
   },
   appBar: {
+    height: 64,
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -38,9 +39,23 @@ const styles = (theme) => ({
       }),
     },
   },
+  toolbar: {
+    height: '100%',
+  },
+  toolbarTitle: {
+    flexGrow: 1,
+    overflow: 'hidden',
+    paddingRight: 8,
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+  },
   menuButton: {
-    marginLeft: 12,
-    marginRight: 20,
+    marginLeft: 8,
+    marginRight: 8,
+    [theme.breakpoints.up('md')]: {
+      marginLeft: 12,
+      marginRight: 20,
+    },
   },
   drawerPaper: {
     width: drawerWidth,
@@ -50,12 +65,18 @@ const styles = (theme) => ({
   content: {
     flexGrow: 1,
     backgroundColor: '#F5F5F5',
-    padding: `96px ${theme.spacing.unit * 3}px`,
+    marginTop:  64,
+    overflow: 'auto',
+    padding: `${theme.spacing.unit * 3}px ${theme.spacing.unit * 1}px`,
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
+    [theme.breakpoints.up('sm')]: {
+      padding: `${theme.spacing.unit * 3}px ${theme.spacing.unit * 2}px`,
+    },
     [theme.breakpoints.up('md')]: {
+      padding: theme.spacing.unit * 3,
       marginLeft: -drawerWidth,
     },
   },
@@ -100,7 +121,7 @@ class Dashboard extends React.Component {
           elevation={1}
           position="absolute"
         >
-          <Toolbar disableGutters={true}>
+          <Toolbar className={classes.toolbar} disableGutters={true}>
             <IconButton
               color="inherit"
               aria-label="Abrir ou fechar menu"
@@ -109,7 +130,7 @@ class Dashboard extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            {title}
+            <h1 className={classes.toolbarTitle}>{title}</h1>
           </Toolbar>
         </AppBar>
         <Hidden mdUp={true}>
