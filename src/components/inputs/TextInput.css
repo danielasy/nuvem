@@ -1,0 +1,25 @@
+.text-input {
+  background-color: transparent;
+  border: 1px solid #333333;
+  border-radius: 4px;
+  color: #333333;
+  font-family: 'Open Sans', Tahoma, sans-serif;
+  font-size: 0.875rem;
+  padding: 8px;
+}
+
+.text-input::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+
+.text-input::-moz-placeholder {
+  opacity: 0.5;
+}
+
+.text-input:-ms-input-placeholder {
+  opacity: 0.5;
+}
+
+.text-input:-moz-placeholder {
+  opacity: 0.5;
+}

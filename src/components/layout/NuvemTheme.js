@@ -15,6 +15,11 @@ const theme = createMuiTheme({
     MuiButton: {
       root: {
         fontFamily: 'Open Sans, Tahoma, sans-serif',
+        fontWeight: 600,
+      },
+      contained: {
+        boxShadow: 'none',
+        padding: '9px 16px',
       },
     },
   },

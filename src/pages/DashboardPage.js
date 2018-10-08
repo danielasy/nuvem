@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Dashboard from '../components/layout/Dashboard';
 import NuvemTheme from '../components/layout/NuvemTheme';
+import CreateProductPage from './CreateProductPage';
 import ProductsPage from './ProductsPage';
 
 class DashboardPage extends React.Component {
@@ -42,6 +43,7 @@ class DashboardPage extends React.Component {
               <Route
                 path="/products/new"
                 exact={true}
+                render={() => <CreateProductPage />}
               />
             </Switch>
           }
